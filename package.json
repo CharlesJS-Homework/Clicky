@@ -5,6 +5,7 @@
   "homepage": "https://charlesjs-homework.github.io/Clicky/",
   "dependencies": {
     "eslint": "^5.3.0",
+    "file-loader": "^1.1.11",
     "gh-pages": "^1.2.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

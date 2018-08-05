@@ -30,7 +30,7 @@ class App extends Component {
   allCats = () => {
     const catCount = catalog.catCount;
 
-    return Array(catCount).fill().map((_, i) => `/img/cats/cat${i}.jpg`);
+    return Array(catCount).fill().map((_, i) => `${window.location.origin}/img/cats/cat${i}.jpg`);
   }
 
   catClicked = (event) => {
@@ -80,7 +80,7 @@ class App extends Component {
     this.setState({
       over: true,
       status: '😸 😸 😸 YOU WIN!!! 😸 😸 😸',
-      sound: '/snd/purr.mp3'
+      sound: window.location.origin + '/snd/purr.mp3'
     })
 
     this.updateTopScore(score);
@@ -94,7 +94,7 @@ class App extends Component {
     this.setState({
       over: true,
       status: '😾 😾 😾 MRROW!!! (Scratch, Hiss) 😾 😾 😾',
-      sound: '/snd/angry_cat.mp3'
+      sound: window.location.origin + '/snd/angry_cat.mp3'
     });
   }
 
@@ -133,15 +133,15 @@ class App extends Component {
     return (
       <div>
         <audio ref={self => { this.meowSound = self; }}>
-          <source src="/snd/meow.mp3" type="audio/mpeg">
+          <source src={ window.location.origin + '/snd/meow.mp3' } type="audio/mpeg">
           </source>
         </audio>
         <audio ref={self => { this.winSound = self; }}>
-          <source src="/snd/purr.mp3" type="audio/mpeg">
+          <source src={ window.location.origin + '/snd/purr.mp3' } type="audio/mpeg">
           </source>
         </audio>
         <audio ref={self => { this.loseSound = self; }}>
-          <source src="/snd/angry_cat.mp3" type="audio/mpeg">
+          <source src={ window.location.origin + '/snd/angry_cat.mp3' } type="audio/mpeg">
           </source>
         </audio>
       </div>
